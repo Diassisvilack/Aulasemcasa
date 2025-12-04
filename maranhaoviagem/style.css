@@ -1,0 +1,220 @@
+:root {
+ --cor-principal: #1f08a1ff;
+ --cor-secundaria: #FFCD00;
+ --cor-acento: #D84315;
+ --cor-fundo: #F4F4F9;
+ --cor-texto: #333;
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ background-color: var(--cor-fundo);
+ color: var(--cor-texto);
+ line-height: 1.6;
+
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+}
+
+main {
+ padding: 20px;
+ max-width: 1200px;
+ margin: 0 auto;
+ flex-grow: 1;
+ width: 100%;
+}
+
+h2 {
+ color: var(--cor-principal);
+ border-bottom: 2px solid var(--cor-secundaria);
+ padding-bottom: 10px;
+ margin-bottom: 20px;
+}
+
+/* --- CORREÇÃO E AJUSTE DO HEADER --- */
+header {
+ background-color: var(--cor-principal);
+ color: rgb(255, 255, 255);
+ padding: 30px 20px; 
+ 
+ /* Configuração Flexbox consolidada: */
+ display: flex;
+ justify-content: space-between; 
+ align-items: center; 
+
+}
+
+/* --- ESTILO DO LOGOTIPO --- */
+.logo-img {
+ max-height: 100px; 
+ width: auto;
+}
+
+/* O <h1> foi mantido, mas se você usar a tag <img>, pode remover este bloco. */
+header h1 {
+ font-size: 1.8em;
+ text-transform: uppercase;
+}
+
+/* O <h1> foi mantido, mas se você usar a tag <img>, pode remover este bloco. */
+header P {
+ width: 15px;   
+ font-size: 1.8em;
+ text-transform: uppercase;
+}
+
+nav ul {
+ list-style: none;
+ display: flex;
+}
+
+nav ul li a {
+ color: white;
+ text-decoration: none;
+ padding: 10px 15px;
+ transition: background-color 0.3s;
+ border-radius: 5px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+ background-color: var(--cor-secundaria);
+ color: var(--cor-principal);
+}
+
+/* --- MELHORIA NO BOTÃO PRINCIPAL (UX/Feedback) --- */
+.btn-principal {
+ background-color: var(--cor-secundaria);
+ color: var(--cor-principal);
+ padding: 10px 20px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ font-size: 1em;
+ text-decoration: none;
+ display: inline-block;
+ transition: opacity 0.3s, transform 0.1s; 
+ box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); 
+}
+
+.btn-principal:hover {
+ opacity: 1; 
+ transform: translateY(-1px); 
+}
+
+.btn-principal:active {
+ transform: translateY(1px); 
+ box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.form-container {
+ max-width: 400px;
+ margin: 40px auto;
+ padding: 30px;
+ background-color: white;
+ border-radius: 8px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container label {
+ display: block;
+ margin-bottom: 5px;
+ font-weight: bold;
+ color: var(--cor-principal);
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="password"]:focus {
+ border-color: var(--cor-principal);
+ outline: none;
+ box-shadow: 0 0 5px rgba(31, 8, 161, 0.2);
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+ width: 100%;
+ padding: 10px;
+ margin-bottom: 15px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ transition: border-color 0.3s;
+}
+
+footer {
+ background-color: var(--cor-principal);
+ color: white;
+ text-align: center;
+ padding: 15px;
+ width: 100%;
+}
+
+/* --- ESTILO DO CONTÊINER QUE ALINHA OS CARTÕES LADO A LADO (Adição Importante!) --- */
+.ofertas-list {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+}
+
+.oferta-card {
+ min-height: 450px; 
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ background-color: white; 
+ padding: 20px; 
+ border-radius: 8px; 
+ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+ flex: 1 1 300px;
+}
+
+.oferta-card img {
+ /* CORREÇÃO: Garante que a imagem preencha a largura total do cartão */
+ width: 100%; 
+ 
+ max-height: 180px; 
+ object-fit: cover; 
+ border-radius: 5px;
+ margin-bottom: 15px;
+}
+
+.oferta-card .btn-principal {
+ margin-top: auto; 
+ text-align: center;
+}
+
+.tabela-pacotes {
+ width: 100%;
+ border-collapse: collapse;
+ margin: 30px 0;
+ box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.tabela-pacotes thead tr {
+ background-color: var(--cor-principal);
+ color: #ffffff;
+text-align: left;
+}
+
+.tabela-pacotes th,
+.tabela-pacotes td {
+ padding: 12px 15px;
+ border: 1px solid #ddd;
+}
+
+.tabela-pacotes tbody tr:nth-of-type(even) {
+ background-color: #f8f8f8;
+}
+
+/* --- Media Query --- */
+@media (max-width: 768px) {
+header
